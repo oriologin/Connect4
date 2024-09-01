@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="top"
+    android:layout_marginLeft="17dp"
+    android:layout_marginTop="15dp"
+    android:layout_marginEnd="0dp"
+    android:layout_marginRight="20dp"
+    android:layout_marginBottom="17dp"
+    android:layout_weight="1"
+    android:background="#000000"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+
+    <ImageView
+        android:id="@+id/gameTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="120dp"
+        android:layout_gravity="center_vertical"
+        android:padding="15dp"
+        android:src="@drawable/connect_4_game_logo" />
+
+    <TextView
+        android:id="@+id/gameStatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:padding="0dp"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="30sp" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/enterNameEditText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginEnd="22dp"
+            android:layout_marginBottom="16dp"
+            android:background="@color/white"
+            android:backgroundTint="#cccccc"
+            android:hint="Enter your name"
+            android:inputType="text"
+            android:padding="8dp"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/connectButton"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/connectButton"
+            android:layout_width="102dp"
+            android:layout_height="51dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="16dp"
+            android:backgroundTint="#FDFDFF"
+            android:text="Connect"
+            android:textColor="#000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/enterNameEditText"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/startGame"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="0dp"
+        android:gravity="center"
+        android:text=""
+        android:textColor="#FFFFFF"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="8dp">
+
+        <!-- Buttons to select columns -->
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="onColumnClick"
+            android:tag="0"
+            android:text="1" />
+
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="onColumnClick"
+            android:tag="1"
+            android:text="2" />
+
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="onColumnClick"
+            android:tag="2"
+            android:text="3" />
+
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="onColumnClick"
+            android:tag="3"
+            android:text="4" />
+
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="onColumnClick"
+            android:tag="4"
+            android:text="5" />
+
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="onColumnClick"
+            android:tag="5"
+            android:text="6" />
+
+        <Button
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:backgroundTint="#CCCCCC"
+            android:onClick="onColumnClick"
+            android:tag="6"
+            android:text="7" />
+    </LinearLayout>
+
+    <GridLayout
+        android:id="@+id/boardGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:columnCount="7"
+        android:padding="8dp"
+        android:rowCount="6">
+        <!-- Here the cells will be generated from the Java code -->
+    </GridLayout>
+
+    <Button
+        android:id="@+id/playAgainButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#FDFDFF"
+        android:text="Play again"
+        android:textColor="#000000" />
+
+
+</LinearLayout>

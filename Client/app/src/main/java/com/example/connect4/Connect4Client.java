@@ -35,6 +35,7 @@ public class Connect4Client extends AsyncTask<Void, String, Boolean> {
 
             // Notify about successful connection
             publishProgress("Connection established successfully!");
+            gameActivity.onConnectionSuccess();
 
             String response;
             while ((response = input.readLine()) != null) {
@@ -43,6 +44,7 @@ public class Connect4Client extends AsyncTask<Void, String, Boolean> {
             return true;
         } catch (IOException e) {
             connectionErrorMessage = "Error establishing connection to server: " + e.getMessage();
+            gameActivity.onConnectionFailure(connectionErrorMessage);
             return false;
         } finally {
             try {
